@@ -1,5 +1,5 @@
 export enum ActionType {
-    AddendOne,
-    MultiNumber,
+    AddendOne = 'AddendOne',
+    MultiNumber = 'MultiNumber',
 }
 
