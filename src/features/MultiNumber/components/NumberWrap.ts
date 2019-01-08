@@ -9,7 +9,6 @@ interface MyReduxState {
 
 const mapState: MapStateToProps<StateProps, OwnProps, MyReduxState> =
     (state: MyReduxState, props: OwnProps) => ({
-        ...props,
         value: state.MultiNumber[props.id],
     })
 
@@ -21,7 +20,6 @@ function stoi(s: string) {
 
 const mapDispatch: MapDispatchToProps<DispatchProps, OwnProps> =
     (dispatch: any, props: OwnProps) => ({
-        ...props,
         update: (s: string) => dispatch(MultiNumberAction(props.id, stoi(s))),
     })
 

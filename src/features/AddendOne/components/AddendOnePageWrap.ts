@@ -9,7 +9,6 @@ interface MyReduxState {
 
 const mapState: MapStateToProps<PropsFromState, OwnProps, MyReduxState> =
     (state: MyReduxState, props: OwnProps) => ({
-        ...props,
         value: state.AddendOne.value,
     })
 
@@ -21,7 +20,6 @@ function stoi(s: string) {
 
 const mapDispatch: MapDispatchToProps<PropsFromDispatch, OwnProps> =
     (dispatch: any, props: OwnProps) => ({
-        ...props,
         update: (s: string) => dispatch(addendOneAction(stoi(s))),
     })
 
