@@ -5,18 +5,18 @@ export interface OwnProps {
 }
 
 export interface StateProps {
-    value: number,
+    value?: number,
 }
 
 export interface DispatchProps {
-    update: (value: number) => void,
+    update: (value: string) => void,
 }
 
 type Props = DispatchProps & StateProps & OwnProps
 
 export class Number extends React.Component<Props> {
     onChange = ({ target }: { target: { name: string, value: string } }) => {
-        this.props.update(parseInt(target.value))
+        this.props.update(target.value)
     }
 
     render() {

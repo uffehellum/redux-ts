@@ -3,7 +3,8 @@ import './App.css';
 import AddendOnePage from '../../features/AddendOne/components/AddendOnePageWrap'
 import { Provider } from 'react-redux'
 import store from '../redux/store'
-import { MultiNumberPage } from '../../features/MultiNumberPage/components/MultiNumberPage';
+import { MultiNumberPage } from '../../features/MultiNumber/components/MultiNumberPage';
+import SumPage from '../../features/Sum/components/SumPageWrap';
 
 class App extends Component {
   render() {
@@ -11,7 +12,8 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <AddendOnePage />
-          <MultiNumberPage/>
+          <MultiNumberPage />
+          <SumPage />
         </div>
       </Provider>
     );
