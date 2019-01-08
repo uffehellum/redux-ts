@@ -18,6 +18,7 @@ function stoi(s: string) {
     if (n > 0) return n;
     return undefined
 }
+
 const mapDispatch: MapDispatchToProps<DispatchProps, OwnProps> =
     (dispatch: any, props: OwnProps) => ({
         ...props,

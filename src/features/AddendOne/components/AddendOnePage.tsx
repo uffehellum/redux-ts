@@ -1,11 +1,11 @@
 import React, { ChangeEvent } from 'react'
 
 export interface PropsFromState {
-    value: number
+    value?: number
 }
 
 export interface PropsFromDispatch {
-    update: (n: number) => void
+    update: (s: string) => void
 }
 
 export interface OwnProps { }
@@ -14,7 +14,7 @@ export type Props = PropsFromState & PropsFromDispatch & OwnProps
 
 export class AddendOnePage extends React.Component<Props> {
     onChange = ({ target }: { target: { name: string, value: string } }) => {
-        this.props.update(parseInt(target.value))
+        this.props.update(target.value)
     }
 
     render() {

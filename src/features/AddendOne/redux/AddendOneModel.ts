@@ -1,3 +1,3 @@
 export interface AddendOneModel {
-    value: number,
+    value?: number,
 }
