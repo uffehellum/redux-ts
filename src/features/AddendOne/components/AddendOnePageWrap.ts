@@ -12,15 +12,9 @@ const mapState: MapStateToProps<PropsFromState, OwnProps, MyReduxState> =
         value: state.AddendOne.value,
     })
 
-function stoi(s: string) {
-    const n = parseInt(s)
-    if (n > 0) return n;
-    return undefined
-}
-
 const mapDispatch: MapDispatchToProps<PropsFromDispatch, OwnProps> =
     (dispatch: any, props: OwnProps) => ({
-        update: (s: string) => dispatch(addendOneAction(stoi(s))),
+        onNumberChange: (value?: number) => dispatch(addendOneAction(value)),
     })
 
 export default connect<PropsFromState, PropsFromDispatch, OwnProps, MyReduxState>

@@ -1,4 +1,5 @@
 import React from "react";
+import { PositiveIntegerInput } from "../../../shared/PositiveIntegerInput";
 
 export interface OwnProps {
     id: string,
@@ -9,20 +10,19 @@ export interface StateProps {
 }
 
 export interface DispatchProps {
-    update: (value: string) => void,
+    onNumberChange: (value?: number) => void,
 }
 
 type Props = DispatchProps & StateProps & OwnProps
 
 export class Number extends React.Component<Props> {
-    onChange = ({ target }: { target: { name: string, value: string } }) => {
-        this.props.update(target.value)
-    }
-
     render() {
         return <div>
             <label>{this.props.id}</label>
-            <input value={this.props.value} onChange={this.onChange} />
-        </div> 
+            <PositiveIntegerInput
+                value={this.props.value}
+                onNumberChange={this.props.onNumberChange}
+            />
+        </div>
     }
 }

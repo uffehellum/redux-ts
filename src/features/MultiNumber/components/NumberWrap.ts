@@ -12,15 +12,9 @@ const mapState: MapStateToProps<StateProps, OwnProps, MyReduxState> =
         value: state.MultiNumber[props.id],
     })
 
-function stoi(s: string) {
-    const n = parseInt(s)
-    if (n > 0) return n;
-    return undefined
-}
-
 const mapDispatch: MapDispatchToProps<DispatchProps, OwnProps> =
     (dispatch: any, props: OwnProps) => ({
-        update: (s: string) => dispatch(MultiNumberAction(props.id, stoi(s))),
+        onNumberChange: (value?: number) => dispatch(MultiNumberAction(props.id, value)),
     })
 
 export default connect<StateProps, DispatchProps, OwnProps, MyReduxState>
